@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuizNova | Test Your Knowledge</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo" onclick="showHome()">
+            Quiz<span>Nova</span>
+        </a>
+
+        <div class="nav-label">LEARN. PLAY. GROW.</div>
+    </header>
+
+    <main>
+        <!-- HOME SCREEN -->
+        <section id="homeScreen" class="home-screen">
+
+            <div class="hero">
+                <div class="eyebrow">YOUR KNOWLEDGE, YOUR CHALLENGE</div>
+
+                <h1>
+                    Ready to test<br>
+                    your <span>knowledge?</span>
+                </h1>
+
+                <p>
+                    Explore fun quizzes, challenge yourself,
+                    and discover how much you know.
+                </p>
+            </div>
+
+            <div class="quiz-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Explore Quizzes</h2>
+                        <p>Choose a quiz and start learning.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-grid">
+
+                    <article class="quiz-card">
+                        <div class="quiz-icon purple-icon">🌍</div>
+
+                        <div class="quiz-category">GENERAL KNOWLEDGE</div>
+
+                        <h3>Brain Booster</h3>
+
+                        <p>
+                            Test your knowledge of science,
+                            geography, and general facts.
+                        </p>
+
+                        <div class="quiz-meta">
+                            <span>5 Questions</span>
+                            <span>Beginner</span>
+                        </div>
+
+                        <button
+                            class="start-button"
+                            onclick="startQuiz('general')">
+                            Start Quiz →
+                        </button>
+                    </article>
+
+                    <article class="quiz-card">
+                        <div class="quiz-icon blue-icon">💻</div>
+
+                        <div class="quiz-category">WEB DEVELOPMENT</div>
+
+                        <h3>Code Master</h3>
+
+                        <p>
+                            Explore HTML, CSS, and the basics
+                            of web development.
+                        </p>
+
+                        <div class="quiz-meta">
+                            <span>5 Questions</span>
+                            <span>Beginner</span>
+                        </div>
+
+                        <button
+                            class="start-button"
+                            onclick="startQuiz('web')">
+                            Start Quiz →
+                        </button>
+                    </article>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- QUIZ SCREEN -->
+        <section id="quizScreen" class="quiz-screen hidden">
+
+            <div class="quiz-top">
+                <button class="back-button" onclick="showHome()">
+                    ← Exit Quiz
+                </button>
+
+                <span id="quizTitle">Quiz</span>
+            </div>
+
+            <div class="quiz-panel">
+
+                <div class="progress-info">
+                    <span id="questionCounter">Question 1 of 5</span>
+                    <span id="progressPercent">20%</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+
+                <h2 id="questionText">Question goes here</h2>
+
+                <div id="optionsContainer" class="options-container">
+                    <!-- Options are added by JavaScript -->
+                </div>
+
+                <div id="feedback" class="feedback hidden"></div>
+
+                <button
+                    id="nextButton"
+                    class="next-button"
+                    disabled
+                    onclick="nextQuestion()">
+                    Check Answer
+                </button>
+
+            </div>
+        </section>
+
+        <!-- RESULTS SCREEN -->
+        <section id="resultScreen" class="result-screen hidden">
+
+            <div class="result-card">
+                <div class="result-icon">🏆</div>
+
+                <div class="eyebrow">QUIZ COMPLETED</div>
+
+                <h1 id="resultHeading">Great Job!</h1>
+
+                <p id="resultMessage">
+                    You completed the quiz.
+                </p>
+
+                <div class="score-circle">
+                    <span id="finalScore">0/5</span>
+                    <small>YOUR SCORE</small>
+                </div>
+
+                <p id="scorePercentage">0% Correct</p>
+
+                <button class="start-button" onclick="restartQuiz()">
+                    Try Again ↻
+                </button>
+
+                <button class="secondary-button" onclick="showHome()">
+                    Explore More Quizzes
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="logo">Quiz<span>Nova</span></div>
+        <p>Learn something new every day.</p>
+        <small>Demo quiz platform</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
